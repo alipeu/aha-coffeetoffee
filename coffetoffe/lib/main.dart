@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-
-// my imports
-import 'package:coffetoffe/components/horizontal_listview.dart';
+import 'package:coffetoffe/components/horizontalListview.dart';
 import 'package:coffetoffe/components/products.dart';
+import 'package:coffetoffe/pages/cart.dart';
 
 void main() {
   runApp(
@@ -48,8 +47,22 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.brown,
         title: Text('Coffe Toffe'),
         actions: <Widget>[
-          new IconButton(icon: Icon(Icons.search, color: Colors.white,), onPressed: (){}),
-          new IconButton(icon: Icon(Icons.shopping_cart, color: Colors.white,), onPressed: (){})
+          new IconButton(
+            icon: Icon(
+              Icons.search, 
+              color: Colors.white,
+            ), 
+            onPressed: (){}
+          ),
+          new IconButton(
+            icon: Icon(
+              Icons.shopping_cart, 
+              color: Colors.white,
+            ), 
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => new ShoppingCart()));
+            }
+          )
         ],
       ),
       drawer: new Drawer(
@@ -74,7 +87,10 @@ class _HomePageState extends State<HomePage> {
             onTap: (){},
             child: ListTile(
               title: Text('Home Page'),
-              leading: Icon(Icons.home),
+              leading: Icon(
+                Icons.home,
+                color: Colors.brown,
+              ),
             ),
           ),
 
@@ -82,7 +98,10 @@ class _HomePageState extends State<HomePage> {
             onTap: (){},
             child: ListTile(
               title: Text('My Account'),
-              leading: Icon(Icons.person),
+              leading: Icon(
+                Icons.person,
+                color: Colors.brown,
+              ),
             ),
           ),
           
@@ -90,15 +109,23 @@ class _HomePageState extends State<HomePage> {
             onTap: (){},
             child: ListTile(
               title: Text('My Orders'),
-              leading: Icon(Icons.shopping_basket),
+              leading: Icon(
+                Icons.shopping_basket,
+                color: Colors.brown,
+              ),
             ),
           ),
           
           InkWell(
-            onTap: (){},
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => new ShoppingCart()));
+            },
             child: ListTile(
-              title: Text('Categories'),
-              leading: Icon(Icons.dashboard),
+              title: Text('Shopping Cart'),
+              leading: Icon(
+                Icons.shopping_cart,
+                color: Colors.brown,
+              ),
             ),
           ),
           
@@ -106,7 +133,10 @@ class _HomePageState extends State<HomePage> {
             onTap: (){},
             child: ListTile(
               title: Text('Favourites'),
-              leading: Icon(Icons.favorite),
+              leading: Icon(
+                Icons.favorite, 
+                color: Colors.brown,
+              ),
             ),
           ),
           
@@ -116,7 +146,9 @@ class _HomePageState extends State<HomePage> {
             onTap: (){},
             child: ListTile(
               title: Text('Settings'),
-              leading: Icon(Icons.settings),
+              leading: Icon(
+                Icons.settings,
+              ),
             ),
           ),
           
@@ -124,7 +156,9 @@ class _HomePageState extends State<HomePage> {
             onTap: (){},
             child: ListTile(
               title: Text('About'),
-              leading: Icon(Icons.help),
+              leading: Icon(
+                Icons.help,
+              ),
             ),
           ),
 

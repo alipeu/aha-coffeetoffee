@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "68544967651",
+    "firebase_url": "https://coffetoffe-91e40.firebaseio.com",
+    "project_id": "coffetoffe-91e40",
+    "storage_bucket": "coffetoffe-91e40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68544967651:android:27b03ed883920163b8e6d6",
+        "android_client_info": {
+          "package_name": "com.example.coffetoffe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "68544967651-iq52d81mrn5nok9e13jap0obni1o34bn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.coffetoffe",
+            "certificate_hash": "7668c9922c01d551efae2d108a75dd4a712dd83a"
+          }
+        },
+        {
+          "client_id": "68544967651-so8h98qpamfbia51c3bnfdkeabi83baj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtgrpQsGmhhI816TCKM5LaF3WJpbroiMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "68544967651-so8h98qpamfbia51c3bnfdkeabi83baj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

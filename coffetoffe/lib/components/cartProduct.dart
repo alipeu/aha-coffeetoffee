@@ -62,7 +62,7 @@ class SingleCartProduct extends StatelessWidget {
         leading: new Image.asset(
           cartProductPicture,
           width: 80.0,
-          height: 100.0,
+          height: 80.0,
         ),
         title: new Text(cartProductName),
         subtitle: new Column(
@@ -74,7 +74,7 @@ class SingleCartProduct extends StatelessWidget {
                   child: new Text("Size:"),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(6.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: new Text(
                     cartProductSize, 
                     style: TextStyle(
@@ -87,7 +87,7 @@ class SingleCartProduct extends StatelessWidget {
                   child: new Text("Qty:"),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(6.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: new Text(
                     "$cartProductQty",
                     style: TextStyle(
@@ -111,7 +111,34 @@ class SingleCartProduct extends StatelessWidget {
             ),
           ],
         ),
+        trailing: FittedBox(
+          fit: BoxFit.cover,
+          child: Column(
+            children: <Widget>[
+              new IconButton(
+                icon: Icon(Icons.arrow_drop_up),
+                iconSize: 125.0,
+                onPressed: (){},
+              ),
+              new Text(
+                "$cartProductQty",
+                style: TextStyle(
+                  fontSize: 75.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              new IconButton(
+                icon: Icon(Icons.arrow_drop_down),
+                iconSize: 125.0,
+                onPressed: (){},
+              ),
+            ],
+          ),
+        ),
       ),
     );
+  }
+  void addQuantity() {
+
   }
 }

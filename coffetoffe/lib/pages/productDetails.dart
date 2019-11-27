@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:coffetoffe/main.dart';
+import 'package:coffetoffe/pages/home.dart';
 
 class ProductDetails extends StatefulWidget {
   final productDetailName;

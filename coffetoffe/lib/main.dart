@@ -5,6 +5,9 @@ void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor:  Colors.brown,
+      ),
       home: Login(),
     )
   );

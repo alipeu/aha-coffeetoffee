@@ -1,3 +1,4 @@
+import 'package:coffetoffe/pages/register.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -15,8 +16,10 @@ class _LoginState extends State<Login> {
   final GoogleSignIn googleSignIn = new GoogleSignIn();
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
   final _formKey = GlobalKey<FormState>();
+  
   TextEditingController _emailTextController = TextEditingController();
   TextEditingController _passwordTextController = TextEditingController();
+  
   SharedPreferences preferences;
   bool loading = false;
   bool isLoggedIn = false;
@@ -34,10 +37,11 @@ class _LoginState extends State<Login> {
 
     preferences = await SharedPreferences.getInstance();
     isLoggedIn = await googleSignIn.isSignedIn();
+
     if(isLoggedIn) {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => new HomePage()));
     }
-
+    
     setState(() {
       loading = false;
     });
@@ -105,24 +109,33 @@ class _LoginState extends State<Login> {
             width: double.infinity,
             height: double.infinity,
           ),
-          // Container(
-          //   alignment: Alignment.center,
-          //   child: Image.asset("images/welcome.png", width: 200.0,),
-          // ),
+          
           Container(
-            color: Colors.black.withOpacity(0.4),
+            color: Colors.black.withOpacity(0.6),
             width: double.infinity,
             height: double.infinity,
           ),
+
+          Container(
+            alignment: Alignment.topCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 100.0),
+              child: Image.asset(
+                "images/welcome.png", 
+                height: 100.0,
+              ),
+            ),
+          ),
+
           Padding(
             padding: const EdgeInsets.only(top: 250.0),
             child: Center(
               child: Form(
                 key: _formKey,
-                child: Column(
+                child: ListView(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.fromLTRB(14.0, 8.0, 14.0, 8.0),
                       child: Material(
                         borderRadius: BorderRadius.circular(10.0),
                         color: Colors.white.withOpacity(0.5),
@@ -145,6 +158,7 @@ class _LoginState extends State<Login> {
                                 else
                                   return null;
                               }
+                              return null;
                             },
                           ),
                         ),
@@ -152,7 +166,7 @@ class _LoginState extends State<Login> {
                     ),
 
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.fromLTRB(14.0, 8.0, 14.0, 8.0),
                       child: Material(
                         borderRadius: BorderRadius.circular(10.0),
                         color: Colors.white.withOpacity(0.5),
@@ -180,10 +194,10 @@ class _LoginState extends State<Login> {
                     ),
 
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.fromLTRB(14.0, 8.0, 14.0, 8.0),
                       child: Material(
                         borderRadius: BorderRadius.circular(20.0),
-                        color: Colors.brown,
+                        color: Colors.blue,
                         elevation: 0.0,
                         child: MaterialButton(
                           child: Text(
@@ -201,46 +215,75 @@ class _LoginState extends State<Login> {
                       ),
                     ),
 
-                    Expanded(
-                      child: Container(),
-                    ),
-
-                    Divider(
-                      color: Colors.white,
-                    ),
-
-                    Text(
-                      "OTHER LOGIN OPTION",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15.0,
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "Forgot password",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white
+                        ),
                       ),
                     ),
 
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Material(
-                        borderRadius: BorderRadius.circular(20.0),
-                        color: Colors.red.shade900,
-                        elevation: 0.0,
-                        child: MaterialButton(
-                          child: Text(
-                            "Google", 
-                            textAlign: TextAlign.center, 
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20.0,
-                            ),
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Register()));
+                        },
+                        child: Text(
+                          "Register",
+                          textAlign: TextAlign.center, 
+                          style: TextStyle(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
                           ),
-                          onPressed: (){
-                            handleSignIn();
-                          },
-                          minWidth: MediaQuery.of(context).size.width,
                         ),
                       ),
                     ),
+
+                    // Expanded(
+                    //   child: Container(),
+                    // ),
+
+                    // Divider(
+                    //   color: Colors.white,
+                    // ),
+
+                    // Text(
+                    //   "OTHER LOGIN OPTION",
+                    //   textAlign: TextAlign.center,
+                    //   style: TextStyle(
+                    //     color: Colors.white,
+                    //     fontWeight: FontWeight.bold,
+                    //     fontSize: 15.0,
+                    //   ),
+                    // ),
+
+                    // Padding(
+                    //   padding: const EdgeInsets.all(8.0),
+                    //   child: Material(
+                    //     borderRadius: BorderRadius.circular(20.0),
+                    //     color: Colors.red.shade900,
+                    //     elevation: 0.0,
+                    //     child: MaterialButton(
+                    //       child: Text(
+                    //         "Google", 
+                    //         textAlign: TextAlign.center, 
+                    //         style: TextStyle(
+                    //           color: Colors.white,
+                    //           fontWeight: FontWeight.bold,
+                    //           fontSize: 20.0,
+                    //         ),
+                    //       ),
+                    //       onPressed: (){
+                    //         handleSignIn();
+                    //       },
+                    //       minWidth: MediaQuery.of(context).size.width,
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),

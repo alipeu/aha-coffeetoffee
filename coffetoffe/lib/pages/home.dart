@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_pro/carousel_pro.dart';
+// import 'package:carousel_pro/carousel_pro.dart';
 import 'package:coffetoffe/components/horizontalListview.dart';
 import 'package:coffetoffe/components/products.dart';
 import 'package:coffetoffe/pages/cart.dart';
@@ -12,25 +12,25 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    Widget imageCarousel = new Container(
-      height: 200.0,
-      child: new Carousel(
-        boxFit: BoxFit.cover,
-        images: [
-          AssetImage('images/car_espresso.jpg'),
-          AssetImage('images/car_blended.jpg'),
-          AssetImage('images/car_brewed.jpg'),
-          AssetImage('images/car_bakery.jpg'),
-          AssetImage('images/car_sandwich.jpg'),
-        ],
-        autoplay: false,
-        // animationCurve: Curves.fastOutSlowIn,
-        // animationDuration: Duration(milliseconds: 1000),
-        dotSize: 4.0,
-        dotBgColor: Colors.transparent,
-        indicatorBgPadding: 4.0,
-      ),
-    );
+    // Widget imageCarousel = new Container(
+    //   height: 200.0,
+    //   child: new Carousel(
+    //     boxFit: BoxFit.cover,
+    //     images: [
+    //       AssetImage('images/car_espresso.jpg'),
+    //       AssetImage('images/car_blended.jpg'),
+    //       AssetImage('images/car_brewed.jpg'),
+    //       AssetImage('images/car_bakery.jpg'),
+    //       AssetImage('images/car_sandwich.jpg'),
+    //     ],
+    //     autoplay: false,
+    //     // animationCurve: Curves.fastOutSlowIn,
+    //     // animationDuration: Duration(milliseconds: 1000),
+    //     dotSize: 4.0,
+    //     dotBgColor: Colors.transparent,
+    //     indicatorBgPadding: 4.0,
+    //   ),
+    // );
     
     return Scaffold(
       appBar: new AppBar(
